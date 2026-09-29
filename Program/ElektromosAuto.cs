@@ -17,7 +17,7 @@ namespace Program
         public int AkkumulatorSzint
         {
             get => akkumulatorSzint;
-            set => akkumulatorSzint = Math.clamp(value,0, 100);
+            set => akkumulatorSzint = Math.Clamp(value,0, 100);
         }
         public override void InformaciotAd()
         {

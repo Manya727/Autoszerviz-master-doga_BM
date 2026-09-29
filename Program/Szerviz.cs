@@ -16,7 +16,7 @@ namespace Program
         public void JarmuFelvetele(Jarmu jarmu)
         {
             jarmuvek.Add(jarmu);
-            Console.WriteLine($"{jarmu.Rendszam} megérkezetDD a szervizbe.");
+            Console.WriteLine($"{jarmu.Rendszam} megérkezet a szervizbe.");
         }
         public void InformaciokListazasa()
         {
