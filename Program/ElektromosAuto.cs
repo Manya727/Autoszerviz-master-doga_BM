@@ -6,6 +6,36 @@ namespace Program
 {
     public class ElektromosAuto : Jarmu
     {
+        int akkumulatorSzint;
+
+        public ElektromosAuto(string rendszam, int kor, int kilometerOra, int akkumulatorSzint)
+            : base(rendszam, kor, kilometerOra, 0)
+        {
+            AkkumulatorSzint = akkumulatorSzint;
+        }
+
+        public int AkkumulatorSzint
+        {
+            get => akkumulatorSzint;
+            set => akkumulatorSzint = Math.clamp(value,0, 100);
+        }
+        public override void InformaciotAd()
+        {
+            Console.WriteLine($"{Rendszam} - {Kor} éves elektromos autó, {KilometerOra} km-el, {AkkumulatorSzint} -es töltöttséggel.");
+        }
+        public override void Szervizel(int dij)
+        {
+            if (dij > 100000)
+            {
+                KilometerOra -= 10000;
+            }
+
+            AkkumulatorSzint += 20;
+            Console.WriteLine($"{Rendszam} -es rendszámú autó szervizelése megtörtént");
+        }
+
+
+
 
     }
 }
